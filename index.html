@@ -86,9 +86,9 @@
         .btn {
             display: block;
             width: 100%;
-            padding: 14px;
+            padding: 16px;
             border-radius: 12px;
-            font-size: 1rem;
+            font-size: 1.05rem;
             font-weight: 600;
             text-decoration: none;
             cursor: pointer;
@@ -107,16 +107,6 @@
             box-shadow: 0 6px 20px rgba(180, 70, 255, 0.6);
         }
 
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.1);
-            color: #ffffff;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
-
         .btn-discord {
             background: #5865F2;
             color: #ffffff;
@@ -124,38 +114,6 @@
 
         .btn-discord:hover {
             background: #4752C4;
-        }
-
-        .toast {
-            visibility: hidden;
-            min-width: 200px;
-            background-color: #00e676;
-            color: #000;
-            font-weight: 600;
-            text-align: center;
-            border-radius: 8px;
-            padding: 10px;
-            position: fixed;
-            z-index: 1;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-        }
-
-        .toast.show {
-            visibility: visible;
-            animation: fadein 0.5s, fadeout 0.5s 2.5s;
-        }
-
-        @keyframes fadein {
-            from {bottom: 0; opacity: 0;}
-            to {bottom: 30px; opacity: 1;}
-        }
-
-        @keyframes fadeout {
-            from {bottom: 30px; opacity: 1;}
-            to {bottom: 0; opacity: 0;}
         }
     </style>
 </head>
@@ -175,25 +133,12 @@
             <div class="feature-item">🛡️ <strong>Anti-Lag & Fast Scan:</strong> ทำงานเสถียร ไม่หลุดง่าย</div>
         </div>
 
-        <!-- ปุ่มกดต่างๆ -->
+        <!-- ปุ่มกดรับสคริปต์ผ่าน Linkvertise และ Discord -->
         <div class="btn-group">
-            <button class="btn btn-primary" onclick="copyScript()">📋 คัดลอกสคริปต์ (Copy Loadstring)</button>
-            <a href="วาง_LINKVERTISE_ตรงนี้" target="_blank" class="btn btn-secondary">🔗 รับสคริปต์ผ่าน Linkvertise</a>
+            <a href="วาง_LINKVERTISE_ตรงนี้" target="_blank" class="btn btn-primary">🚀 รับสคริปต์ (Get Script)</a>
             <a href="https://discord.gg/WJ9zAP45F" target="_blank" class="btn btn-discord">💬 เข้าร่วม Discord ชุมชน</a>
         </div>
     </div>
 
-    <div id="toast" class="toast">คัดลอกสคริปต์เรียบร้อยแล้ว!</div>
-
-    <script>
-        function copyScript() {
-            const scriptText = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/NOVAC137/nova-hub/refs/heads/main/script.lua"))()';
-            navigator.clipboard.writeText(scriptText).then(() => {
-                const toast = document.getElementById("toast");
-                toast.className = "toast show";
-                setTimeout(() => { toast.className = toast.className.replace("toast show", "toast"); }, 3000);
-            });
-        }
-    </script>
 </body>
 </html>
