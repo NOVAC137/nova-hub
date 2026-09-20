@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOVA HUB | Official Script</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Kanit', sans-serif;
+        }
+
+        body {
+            background-color: #0b0b10;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(20, 20, 28, 0.8);
+            border: 1px solid rgba(180, 70, 255, 0.3);
+            box-shadow: 0 0 30px rgba(180, 70, 255, 0.2);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid #b446ff;
+            box-shadow: 0 0 15px #b446ff;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        h1 span {
+            color: #b446ff;
+            text-shadow: 0 0 10px rgba(180, 70, 255, 0.5);
+        }
+
+        p.desc {
+            color: #a0a0b0;
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+        }
+
+        .features {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .feature-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 12px 15px;
+            border-radius: 10px;
+            border-left: 4px solid #b446ff;
+            font-size: 0.9rem;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #b446ff, #6d00cc);
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(180, 70, 255, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(180, 70, 255, 0.6);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-discord {
+            background: #5865F2;
+            color: #ffffff;
+        }
+
+        .btn-discord:hover {
+            background: #4752C4;
+        }
+
+        .toast {
+            visibility: hidden;
+            min-width: 200px;
+            background-color: #00e676;
+            color: #000;
+            font-weight: 600;
+            text-align: center;
+            border-radius: 8px;
+            padding: 10px;
+            position: fixed;
+            z-index: 1;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .toast.show {
+            visibility: visible;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+
+        @keyframes fadein {
+            from {bottom: 0; opacity: 0;}
+            to {bottom: 30px; opacity: 1;}
+        }
+
+        @keyframes fadeout {
+            from {bottom: 30px; opacity: 1;}
+            to {bottom: 0; opacity: 0;}
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- โลโก้ Nova Hub -->
+        <img src="https://rbxassetid.com/115592023833919" alt="NOVA HUB Logo" class="logo" onerror="this.src='https://via.placeholder.com/100/b446ff/ffffff?text=NOVA'">
+        
+        <h1><span>NOVA</span> HUB</h1>
+        <p class="desc">สคริปต์คุณภาพสูง รันลื่น ปลอดภัย รองรับทุกอุปกรณ์</p>
+
+        <!-- ฟีเจอร์หลัก -->
+        <div class="features">
+            <div class="feature-item">⚡ <strong>Optimized System:</strong> ปรับแต่งโค้ดระดับสูง ไม่กิน FPS</div>
+            <div class="feature-item">🔍 <strong>Low Server Hopper:</strong> ระบบค้นหาเซิร์ฟเวอร์คนน้อยอัตโนมัติ</div>
+            <div class="feature-item">🛡️ <strong>Anti-Lag & Fast Scan:</strong> ทำงานเสถียร ไม่หลุดง่าย</div>
+        </div>
+
+        <!-- ปุ่มกดต่างๆ -->
+        <div class="btn-group">
+            <button class="btn btn-primary" onclick="copyScript()">📋 คัดลอกสคริปต์ (Copy Loadstring)</button>
+            <a href="วาง_LINKVERTISE_ตรงนี้" target="_blank" class="btn btn-secondary">🔗 รับสคริปต์ผ่าน Linkvertise</a>
+            <a href="https://discord.gg/WJ9zAP45F" target="_blank" class="btn btn-discord">💬 เข้าร่วม Discord ชุมชน</a>
+        </div>
+    </div>
+
+    <div id="toast" class="toast">คัดลอกสคริปต์เรียบร้อยแล้ว!</div>
+
+    <script>
+        function copyScript() {
+            const scriptText = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/NOVAC137/nova-hub/refs/heads/main/script.lua"))()';
+            navigator.clipboard.writeText(scriptText).then(() => {
+                const toast = document.getElementById("toast");
+                toast.className = "toast show";
+                setTimeout(() => { toast.className = toast.className.replace("toast show", "toast"); }, 3000);
+            });
+        }
+    </script>
+</body>
+</html>
